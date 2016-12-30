@@ -1,8 +1,7 @@
 import {
-  Component
+  Component,
+  Input
 } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-root',
@@ -10,11 +9,19 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  prefix: string = 'asdasda';
   selectedOption: string;
-
+  editorcontent: string;
+  someVar : string = 'Eddie';
 
   selects = [{
-    val : "jipjip"
+    val: "jipjip"
+  }, {
+    val: "tweej"
+  }, {
+    val: "oki"
+  }, {
+    val: "doemaardoen"
   }];
 
   tiles = [{
@@ -58,7 +65,15 @@ export class AppComponent {
   }];
 
   // function
-  openDialog() {
+  showDebug() {
     console.log("Tjakkaaaa");
+    this.someVar = 'Tanne';
+  }
+
+  // tinymce function
+  keyupHandlerFunction(meh) {
+    console.log(meh);
+    this.editorcontent = meh;
+    
   }
 }

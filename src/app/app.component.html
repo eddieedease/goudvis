@@ -3,24 +3,35 @@
       Open sidenav</button><br></span>
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
-  <span>Right Aligned Text</span>
+  <img class="responsive-img" src="assets/img/goudvis2.png">
 </md-toolbar>
-<md-sidenav-container class="example-container">
-  <md-sidenav #sidenav class="example-sidenav">
+
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav #sidenav class="sidenav-sidenav">
     <md-progress-spinner mode="indeterminate"></md-progress-spinner>
+    <img class="responsive-img" src="assets/img/goudvis2.png">
   </md-sidenav>
+
+
+
   <div class="intro deep-orange lighten-2 z-depth-1">
-    <h1 class="grey-text text-lighten-5">narayan prusty</h1>
+    <button md-button (click)="showDebug()">Clickert</button>
+    <h1 class="grey-text text-lighten-5">{{someVar}}</h1>
     <h5 clas="grey lighten-4 grey-text text-darken-1">web and mobile developer</h5>
   </div>
-  <simple-tiny [elementId]="'my-editor-id'" (onEditorKeyup)="keyupHandlerFunction($event)">
+
+  <simple-tiny [elementId]="'my-editor-id'"  (onEditorKeyup)="keyupHandlerFunction($event)">
   </simple-tiny>
+
+
+  <p>{{editorcontent}}</p>
+  
   <div class="container about">
     <h5>about me</h5>
     <h6>let me introduce my self</h6>
     <hr>
     <div class="row">
-      <div class="col s12 m4 l4">
+      <div class="tekstcol s12 m4 l4">
         <h6>Story</h6>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
           aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -154,10 +165,9 @@
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   </ul>
   <img class="materialboxed" width="300" src="http://qnimate.com/wp-content/uploads/2015/01/784014790032582570.png" data-caption="Materialize Demo">
-  <button md-button (click)="openDialog()">Clickert</button>
+  
   <div class="example-sidenav-content">
     <md-card>Simple card
-     
       <md-grid-list cols="4" rowHeight="100px">
         <md-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
           {{tile.text}}
